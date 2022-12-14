@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+        <show-header title="Cosas que hay por hacer:"></show-header>
+        <!--<ul>
+            <li v-for="elem in todos" :key="elem.id" @dblclick="delTodo(elem.id)">
+                <input type="checkbox" v-model="elem.done">
+                <del v-if="elem.done">{{elem.title}}</del>
+                <span v-else>{{elem.title}}</span>
+            </li>
+        </ul>
+        <p v-if="todos.length > 0 ">Total tareas: {{todos.length}}</p>
+        <p v-else>No hay tareas que mostrar</p> -->
+        <show-list></show-list>
+        <new-todo></new-todo>
+        <del-all></del-all>
+    </div>
+
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
