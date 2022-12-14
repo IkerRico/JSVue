@@ -17,7 +17,7 @@ export const store = {
     async delTodo(index) {
         let id = this.state.todos[index].id
         await axios.delete(SERVER + '/todos/' + id)
-        this.state.todos.splice(id, 1)
+        this.state.todos.splice(index, 1)
     },
     delTodos() {
         if (confirm('Quieres eliminar todos?')) {
@@ -35,7 +35,6 @@ export const store = {
     async toggleDone(todo) {
         try {
             await axios.put(SERVER + '/todos/' + todo.id, {
-                id: todo.id,
                 title: todo.title,
                 done: !todo.done
             })
