@@ -1,0 +1,30 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Mobiliario",
+      "description": "Muebles de oficina"
+    },
+    {
+      "name": "Videojuegos",
+      "description": "DIsparos",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "id": 2,
+      "name": "Silla de ordenador",
+      "category": 1,
+      "price": 145.95,
+      "units": 5
+    },
+    {
+      "id": 1,
+      "name": "Mesa de ordenador",
+      "category": 1,
+      "price": 125.95,
+      "units": 18
+    }
+  ]
+}
