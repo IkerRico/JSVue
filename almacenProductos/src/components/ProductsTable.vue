@@ -1,10 +1,10 @@
 <script>
-import ProductTable from './ProductItem.vue';
+import ProductItem from './ProductItem.vue';
 import { store } from '../store.js';
 
 export default {
     components: {
-        ProductTable
+        ProductItem
     },
     data() {
         return {
@@ -42,7 +42,7 @@ export default {
             </tr>
         </thead>
         <tbody>
-            <product-table v-for="elem in products" :key="index" :product="elem"></product-table>
+            <product-item v-for="elem in products" :product="elem"></product-item>
         </tbody>
         <tr>
             <th>Total Productos</th>

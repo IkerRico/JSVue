@@ -7,24 +7,58 @@
     },
     {
       "name": "Videojuegos",
-      "description": "DIsparos",
+      "description": "Disparos",
       "id": 2
+    },
+    {
+      "name": "Jardineria",
+      "description": "Plantitas",
+      "id": 4
+    },
+    {
+      "name": "Informatica",
+      "description": "Electronica",
+      "id": 5
+    },
+    {
+      "name": "Automoviles",
+      "description": "Coches",
+      "id": 6
+    },
+    {
+      "name": "Peligroso",
+      "description": "Explosivos",
+      "id": 7
     }
   ],
   "products": [
-    {
-      "id": 2,
-      "name": "Silla de ordenador",
-      "category": 1,
-      "price": 145.95,
-      "units": 5
-    },
     {
       "id": 1,
       "name": "Mesa de ordenador",
       "category": 1,
       "price": 125.95,
-      "units": 18
+      "units": 1
+    },
+    {
+      "name": "Mesa Blanca",
+      "category": 1,
+      "price": 150,
+      "units": 2,
+      "id": 2
+    },
+    {
+      "name": "Mesa Negra",
+      "category": 1,
+      "price": 150,
+      "units": 1,
+      "id": 4
+    },
+    {
+      "name": "Movil ",
+      "category": 2,
+      "price": 100,
+      "units": 1,
+      "id": 5
     }
   ]
 }

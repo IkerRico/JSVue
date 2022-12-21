@@ -1,6 +1,7 @@
 import { reactive } from 'vue';
 import axios from 'axios';
 
+
 const SERVER = 'http://localhost:3000';
 
 export const store = {
@@ -28,17 +29,28 @@ export const store = {
             this.addMessaje("Error en la carga de los categories: " + error)
         }
     },
-    async addProduct(element) {
-        try {
-            const response = await axios.post(SERVER + '/products', {
-                name: element.nombre,
-                category: element.category,
-                price: element.precio,
-                units: element.unidades || 0
-            })
-            this.state.products.push(response.data)
-        } catch (error) {
-            this.addMessaje("Error al añadir el producto: " + error)
+    async saveProduct(element) {
+        if (!element.id) {
+            try {
+                const response = await axios.post(SERVER + '/products', {
+                    name: element.nombre,
+                    category: element.category,
+                    price: element.precio,
+                    units: element.unidades || 0
+                })
+                this.state.products.push(response.data)
+            } catch (error) {
+                this.addMessaje("Error al añadir el producto: " + error)
+                throw error
+            }
+        } else {
+            try {
+                const response = await axios.patch(SERVER + '/products/' + element.id, element)
+                const index = this.state.products.findIndex((item) => item.id == element.id)
+                this.state.products.splice(index, 1, response.data)
+            } catch (error) {
+                this.addMessaje("Error al añadir el producto: " + error)
+            }
         }
     },
     async deleteProduct(element) {
@@ -74,6 +86,22 @@ export const store = {
         this.state.messajes.push(messaje);
         setTimeout(() => {
             this.state.messajes.shift(messaje)
-        },3000)
+        }, 3000)
+    },
+    async getProduct(id) {
+        try {
+            const response = await axios.get(SERVER + '/products/' + id);
+            return response.data
+        } catch (error) {
+            this.addMessaje("Error en la carga de los productos: " + error)
+        }
+    },
+    async saveCat(element) {
+        try {
+            const response = await axios.post(SERVER + '/categories', element)
+            this.state.categories.push(response.data)
+        } catch (error) {
+            this.addMessaje("Error al añadir la categoria: " + error)
+        }
     }
 }
