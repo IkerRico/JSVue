@@ -33,7 +33,7 @@ export const store = {
         if (!element.id) {
             try {
                 const response = await axios.post(SERVER + '/products', {
-                    name: element.nombre,
+                    name: element.name,
                     category: element.category,
                     price: element.precio,
                     units: element.unidades || 0
