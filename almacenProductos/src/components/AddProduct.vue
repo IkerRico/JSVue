@@ -34,6 +34,7 @@ export default {
     watch: {
         $route(to, from) {
             this.prod = {}
+            this.titulo = "Añadir"
         }
     }
 }
