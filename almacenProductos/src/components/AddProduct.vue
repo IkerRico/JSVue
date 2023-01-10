@@ -9,7 +9,6 @@ export default {
         return {
             prod: {},
             categories: store.state.categories,
-            titulo: "Añadir"
         }
     },
     methods: {
@@ -25,16 +24,19 @@ export default {
             this.prod = this.id ? await store.getProduct(this.id) : {}
         }
     },
+    computed: {
+        titulo(){
+            return this.titulo = this.id ? 'Editar' : 'Añadir'
+        }
+    },
     async mounted() {
         if (this.id) {
             this.prod = await store.getProduct(this.id) || {}
-            this.titulo = "Editar"
         }
     },
     watch: {
         $route(to, from) {
             this.prod = {}
-            this.titulo = "Añadir"
         }
     }
 }
