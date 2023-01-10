@@ -74,10 +74,12 @@ export const store = {
     },
     async delUnits(element) {
         try {
-            let response = await axios.patch(SERVER + '/products/' + element.id, {
-                units: element.units - 1
-            })
-            element.units = response.data.units;
+            if (element.units > 0) {
+                let response = await axios.patch(SERVER + '/products/' + element.id, {
+                    units: element.units - 1
+                })
+                element.units = response.data.units;
+            }
         } catch (error) {
             this.addMessaje("Error al quitar unidades: " + error)
         }

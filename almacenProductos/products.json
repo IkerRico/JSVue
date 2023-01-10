@@ -37,13 +37,13 @@
       "name": "Mesa de ordenador",
       "category": 1,
       "price": 125.95,
-      "units": 1
+      "units": 4
     },
     {
       "name": "Mesa Verde",
       "category": 1,
       "price": 150,
-      "units": 2,
+      "units": 0,
       "id": 2
     },
     {
