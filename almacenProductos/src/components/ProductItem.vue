@@ -21,7 +21,7 @@ export default {
         },
         delUnits(){
             store.delUnits(this.product)
-        }
+        },
     },
     computed: {
         getCategory() {
@@ -42,7 +42,7 @@ export default {
         <td id="botones">
             <button class="btn btn-success" @click="addUnits"><i class="bi bi-arrow-up"></i></button>
             <button class="btn btn-info" @click="delUnits"><i class="bi bi-arrow-down"></i></button>
-            <button class="btn btn-warning"><i class="bi bi-pencil"></i></button>
+            <button class="btn btn-warning" @click="$router.push('/edit/' + product.id )"><i class="bi bi-pencil"></i></button>
             <button class="btn btn-danger" @click="deleteProduct"><i class="bi bi-trash"></i></button>
         </td>
     </tr>

@@ -7,10 +7,23 @@
         <div id="titulo" class="col-3">
             <h1>Almacen ACME</h1>
         </div>
-        <div id="nav" class="col-4">
+        <div id="nav" class="col-5">
             <ul>
-                <li class="btn btn-warning">Ver Productos</li>
-                <li class="btn btn-warning">Nuevo Producto</li>
+                <li class="btn btn-warning">
+                    <router-link to="/">Products</router-link>
+                </li>
+                <li class="btn btn-warning">
+                    <router-link to="/AddProduct">Add Product</router-link>
+                </li>
+                <li class="btn btn-warning">
+                    <router-link to="/CategoryTable">Categories</router-link>
+                </li>
+                <li class="btn btn-warning">
+                    <router-link to="/AddCategory">Add Category</router-link>
+                </li>
+                <li class="btn btn-warning">
+                    <router-link to="/About">About us</router-link>
+                </li>
             </ul>
         </div>
     </div>
@@ -23,13 +36,18 @@ li {
     margin-top: 10px;
 }
 
+a, a:hover{
+    text-decoration: none;
+    color: black;
+}
+
 #header {
     display: flex;
     align-items: center;
     background-color: #333;
 }
 
-#titulo{
+#titulo {
     display: flex;
     justify-content: center;
 }

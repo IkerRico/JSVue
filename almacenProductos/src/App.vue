@@ -24,8 +24,7 @@ export default {
 <template>
   <app-menu></app-menu>
   <ErrorMessaje></ErrorMessaje>
-  <products-table></products-table>
-  <add-product></add-product>
+  <router-view></router-view>
 </template>
 
 <style>
