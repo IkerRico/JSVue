@@ -24,7 +24,9 @@ export default {
     },
     methods: {
         deleteBook(){
-            this.$emit('deleteBook',this.book);
+            if (confirm('Quieres eliminar el libro?')) {
+                this.$emit('deleteBook', this.book);
+            }
         }
     }
 }
