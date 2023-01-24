@@ -25,7 +25,7 @@ export const biblioStore = defineStore('biblioStore', {
     async saveBook(element) {
       if (!element.id) {
         try {
-          const response = await axios.post(SERVER + '/libros', element);
+          await axios.post(SERVER + '/libros', element);
         } catch (err) {
           alert('Error al añadir el libro');
         }

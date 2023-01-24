@@ -65,7 +65,7 @@ export default {
         <Form :initial-values="this.book" :validation-schema="validatorForm" @submit="save"
             class="my-3">
             <div class="form-group">
-                <input type="hidden" class="form-control" name="id" disabled>
+                <Field type="hidden" class="form-control" name="id" disabled />
             </div>
             <div class="form-group">
                 <label for="bookTitle">Title</label>

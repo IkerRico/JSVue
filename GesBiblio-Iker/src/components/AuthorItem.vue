@@ -16,7 +16,7 @@ export default {
         <td>{{ author.nombre }}</td>
         <td>{{ author.apellidos }}</td>
         <td>{{ author.nacionalidad }}</td>
-        <td><img :src="'src/assets/img/' + author.img" /></td>
+        <td><img :src="'src/assets/img/' + (author.img || 'default.jpg') " /></td>
         <td id="botones">
             <button class="btn btn-success" @click="$router.push('/Author/' + author.id)"><i
                     class="bi bi-eye"></i></button>
