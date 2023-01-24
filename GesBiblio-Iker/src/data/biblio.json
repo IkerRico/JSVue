@@ -113,6 +113,9 @@
       "img": "imagen.jpg",
       "id": 8,
       "autor": 3
+    },
+    {
+      "id": 9
     }
   ]
 }

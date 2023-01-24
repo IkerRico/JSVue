@@ -20,7 +20,8 @@ export default {
                 .min(2, 'Title must have at least 2 characters')
                 .max(50, 'Title must have no more than 50 characters'),
             ISBN: yup.string()
-                .required('ISBN is required'),
+                .required('ISBN is required')
+                .min(10, 'ISBN must have at least 50 characters'),
             autor: yup.string()
                 .required('Author is required'),
             tema: yup.string()
@@ -32,6 +33,7 @@ export default {
         })
         return {
             book: {},
+            validatorForm
         }
     },
     computed: {
@@ -42,10 +44,10 @@ export default {
         }),
     },
     methods: {
-        save() {
-            this.saveBook(this.book);
-            this.$router.push('/Books')
-            this.book = {};
+        async save() {
+                this.saveBook(this.book);
+                this.$router.push('/Books')
+                this.book = {};
         },
         resetForm() {
             this.book = this.id ? this.getBookById(this.id) : {}
@@ -71,36 +73,36 @@ export default {
             <div class="form-group">
                 <label for="bookTitle">Title</label>
                 <Field class="form-control" name="nombre" type="text" />
-                <ErrorMessage name="nombre" />
+                <ErrorMessage class="ErrorMessage" name="nombre" />
             </div>
             <div class="form-group">
                 <label for="bookIsbn">ISBN</label>
                 <Field class="form-control" name="ISBN" type="text" />
-                <ErrorMessage name="ISBN" />
+                <ErrorMessage class="ErrorMessage" name="ISBN" />
             </div>
             <div class="form-group">
                 <label for="bookAuthor">Author</label>
                 <Field as="select" class="form-control" name="autor">
                     <option v-for="elem in authors" :value="elem.id">{{ elem.nombre }}</option>
                 </Field>
-                <ErrorMessage name="autor" />
+                <ErrorMessage class="ErrorMessage" name="autor" />
             </div>
             <div class="form-group">
                 <label for="bookThemes">Themes</label>
                 <Field as="select" class="form-control" name="tema">
                     <option v-for="elem in themes" :value="elem.id">{{ elem.nombre }}</option>
                 </Field>
-                <ErrorMessage name="tema" />
+                <ErrorMessage class="ErrorMessage" name="tema" />
             </div>
             <div class="form-group">
                 <label for="bookDesc">Description</label>
                 <Field class="form-control" type="textarea" name="desc" id="bookDesc" rows="3" />
-                <ErrorMessage name="desc" />
+                <ErrorMessage class="ErrorMessage" name="desc" />
             </div>
             <div class="form-group">
                 <label for="bookImg">Image</label>
                 <Field type="text" name="img" class="form-control" id="bookImg" />
-                <ErrorMessage name="img" />
+                <ErrorMessage class="ErrorMessage" name="img" />
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-danger ">Reset</button>
@@ -116,5 +118,9 @@ export default {
 
 button {
     margin: 10px;
+}
+
+.ErrorMessage {
+    color: red;
 }
 </style>
