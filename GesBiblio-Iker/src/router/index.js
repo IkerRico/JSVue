@@ -4,6 +4,8 @@ import BooksView from '../views/BooksView.vue';
 import TableAuthors from '../views/TableAuthors.vue';
 import AuthorView from '../views/AuthorView.vue';
 import FormBook from '../views/AddBook.vue';
+import AboutUs from '../views/AboutUs.vue';
+
 import { Form } from 'vee-validate';
 
 
@@ -39,7 +41,12 @@ const routes = [
         name: 'EditBook',
         component: FormBook,
         props: true
-    }
+    },
+    {
+        path: '/AboutUs',
+        name: 'AboutUs',
+        component: AboutUs
+    },
 ]
 
 const router = createRouter({

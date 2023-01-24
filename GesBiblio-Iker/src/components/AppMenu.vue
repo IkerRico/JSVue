@@ -22,7 +22,7 @@
                         <router-link to="/AddBook">Add books</router-link>
                     </li>
                     <li class="btn btn-warning">
-                        <router-link to="#">About us</router-link>
+                        <router-link to="/AboutUs">About us</router-link>
                     </li>
                 </ul>
             </div>
