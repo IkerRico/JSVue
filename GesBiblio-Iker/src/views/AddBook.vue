@@ -49,9 +49,6 @@ export default {
                 this.$router.push('/Books')
                 this.book = {};
         },
-        resetForm() {
-            this.book = this.id ? this.getBookById(this.id) : {}
-        },
         ...mapActions(biblioStore, {
             getBookById: 'getBookById'
         })
@@ -66,7 +63,7 @@ export default {
 <template>
     <div class="d-flex justify-content-center">
         <Form :initial-values="this.book" :validation-schema="validatorForm" @submit="save"
-            @reset="resetForm" class="my-3">
+            class="my-3">
             <div class="form-group">
                 <input type="hidden" class="form-control" name="id" disabled>
             </div>
