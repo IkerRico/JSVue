@@ -21,7 +21,7 @@ export default {
                 .max(50, 'Title must have no more than 50 characters'),
             ISBN: yup.string()
                 .required('ISBN is required')
-                .min(10, 'ISBN must have at least 50 characters'),
+                .min(10, 'ISBN must have at least 10 characters'),
             autor: yup.string()
                 .required('Author is required'),
             tema: yup.string()
