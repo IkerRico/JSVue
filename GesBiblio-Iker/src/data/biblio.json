@@ -115,7 +115,31 @@
       "autor": 3
     },
     {
+      "nombre": "El patito feo",
+      "ISBN": "0320313580",
+      "autor": 5,
+      "tema": 1,
+      "desc": "Una pata tiene varios patitos, pero uno de ellos es mucho más feo, tosco y torpe que el resto, por lo que todos le dan de lado y se burlan de él.",
+      "img": "elPatitoFeo.jpeg",
       "id": 9
+    },
+    {
+      "nombre": "El patito feo",
+      "ISBN": "0320313580",
+      "autor": 5,
+      "tema": 1,
+      "desc": "Una pata tiene varios patitos, pero uno de ellos es mucho más feo, tosco y torpe que el resto, por lo que todos le dan de lado y se burlan de él.",
+      "img": "elPatitoFeo.jpeg",
+      "id": 10
+    },
+    {
+      "nombre": "El patito feo 2",
+      "ISBN": "0320313580",
+      "autor": 5,
+      "tema": 1,
+      "desc": "Una pata tiene varios patitos, pero uno de ellos es mucho más feo, tosco y torpe que el resto, por lo que todos le dan de lado y se burlan de él.",
+      "img": "elPatitoFeo.jpeg",
+      "id": 11
     }
   ]
 }

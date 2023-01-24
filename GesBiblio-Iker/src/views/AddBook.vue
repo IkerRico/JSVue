@@ -23,9 +23,9 @@ export default {
                 .required('ISBN is required')
                 .min(10, 'ISBN must have at least 10 characters'),
             autor: yup.string()
-                .required('Author is required'),
-            tema: yup.string()
-                .required('Themes is required'),
+                    .required('Author is required'),
+            tema:   yup.string()
+                    .required('Themes is required'),
             desc: yup.string()
                 .nullable(),
             img: yup.string()
@@ -44,8 +44,8 @@ export default {
         }),
     },
     methods: {
-        async save() {
-                this.saveBook(this.book);
+        async save(values) {
+                this.saveBook(values);
                 this.$router.push('/Books')
                 this.book = {};
         },
@@ -65,10 +65,10 @@ export default {
 </script>
 <template>
     <div class="d-flex justify-content-center">
-        <Form :initial-values="this.book" :validation-schema="validatorForm" @submit.prevent="save()"
-            @reset.prevent="resetForm()" class="my-3">
+        <Form :initial-values="this.book" :validation-schema="validatorForm" @submit="save"
+            @reset="resetForm" class="my-3">
             <div class="form-group">
-                <input type="hidden" class="form-control" v-model="book.id" disabled>
+                <input type="hidden" class="form-control" name="id" disabled>
             </div>
             <div class="form-group">
                 <label for="bookTitle">Title</label>
