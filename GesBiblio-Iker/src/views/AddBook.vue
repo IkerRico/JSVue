@@ -23,9 +23,9 @@ export default {
                 .required('ISBN is required')
                 .min(10, 'ISBN must have at least 10 characters'),
             autor: yup.string()
-                    .required('Author is required'),
-            tema:   yup.string()
-                    .required('Themes is required'),
+                .required('Author is required'),
+            tema: yup.string()
+                .required('Themes is required'),
             desc: yup.string()
                 .nullable(),
             img: yup.string()
@@ -45,9 +45,9 @@ export default {
     },
     methods: {
         async save(values) {
-                this.saveBook(values);
-                this.$router.push('/Books')
-                this.book = {};
+            this.saveBook(values);
+            this.$router.push('/Books')
+            this.book = {};
         },
         ...mapActions(biblioStore, {
             getBookById: 'getBookById'
@@ -62,8 +62,7 @@ export default {
 </script>
 <template>
     <div class="d-flex justify-content-center">
-        <Form :initial-values="this.book" :validation-schema="validatorForm" @submit="save"
-            class="my-3">
+        <Form :initial-values="this.book" :validation-schema="validatorForm" @submit="save" class="my-3">
             <div class="form-group">
                 <Field type="hidden" class="form-control" name="id" disabled />
             </div>
